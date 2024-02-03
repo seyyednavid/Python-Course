@@ -205,6 +205,42 @@ z = x != z # => True
 # 0, 1, 2
 
 
-###### for in list
+###### while and for in list
+list = ["apple", "orange", 12, 1000]
+
+i = 0;
+# while i < len(list) :
+#     print(list[i])
+#     i += 1;
+
+
+# for i in range(len(list)) :
+#     print(list[i])
+
+
+# for item in list:
+#     print(item);
+
+# [print(item) for item in list] 
+
+# my_list = []
+# for item in list:
+#     if item != 12:
+#         my_list.append(item)
+# print(my_list)
+
+
+# my_list = []
+# [my_list.append(item) for item in list if item != 12]
+# print(my_list)
+
+# my_list = [item for item in list if item != 12 ]
+# print(my_list)
+
+list_num = [i for i in range(10) if i % 2 != 0 ]
+print(list_num);
+
+
+
 
     
