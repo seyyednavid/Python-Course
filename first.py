@@ -238,9 +238,136 @@ i = 0;
 # print(my_list)
 
 list_num = [i for i in range(10) if i % 2 != 0 ]
-print(list_num);
+# print(list_num);
+
+############sorting
+
+list_number = [3,1,9,5,4,8,2,0]
+list_number.sort()
+# print(list_number)
+
+list_str = ["orange", "apple", "zebra", "monkey"]
+# list_str.sort()
+# list_str.sort(reverse=True)
+# list_str.sort(key=str.lower)  # consider all strings as lowercase
+list_str.reverse()
 
 
+
+
+############ coping list
+
+list_str = ["orange", "apple", "zebra", "monkey"]
+# new_list  = list_str
+# list_str.pop()
+# print(new_list) # => ['orange', 'apple', 'zebra'] => because new_list is a pointer for list_str
+
+# new_list  = list_str.copy()
+# list_str.pop()
+# print(new_list)  # ['orange', 'apple', 'zebra', 'monkey'] =>  make a new one
+
+# x = ["orange", "apple", "zebra", "monkey"]
+# y = list(x)
+# print(y) 
 
 
     
+
+################ combining 2 lists
+# x = ["orange", "apple", "zebra", "monkey"]
+# y = [1,2,3,6,9]
+# z = x + y
+# print(z)
+
+
+#----------------------------------------------------------------------
+#################  work with strings
+
+# string slice
+txt = "hello world!"
+# new_txt = txt[ :5] # => hello
+# new_txt = txt[-6: ] # =>  world!
+# new_txt = txt[6:len(txt) - 1] # =>  world
+# new_txt = txt[-8:7]  # => o w
+# print(new_txt)
+
+
+# string modify
+txt = "hello world!"
+# new_txt = txt.upper()
+# new_txt = txt.lower()
+
+# new_txt = txt.strip() # remove spaces from both side
+# new_txt = txt.lstrip()
+# new_txt = txt.rstrip()
+
+# new_txt = txt.replace("l", "")  # => heo word!
+# new_txt = txt.replace("l", "" , 1)  # => just remove one  => helo world!
+# new_txt = txt.replace(" ", "")  # => helloworld!
+
+
+text = "hello-world-python"
+new_txt = text.split("-") # => ['hello', 'world', 'python']
+# print(new_txt)
+
+result = "";
+for word in new_txt:
+    result += word + " "
+# print(result.strip());
+    
+
+
+############# string concatination
+
+txt1 = "hello"
+txt2 = "world!"
+# txt3 = txt1 + " " + txt2 # hello world!
+# age = 18
+# print(txt3)
+
+#  ===> we can not use + for concatinating str and num 
+# txt3 = txt1 + " " +  txt2 + "" + age + " " + "years old" # => error
+txt3 = txt1 + " " +  txt2 + " " + str(age) + " " + "years old" # => hello world! 29 years old
+# print(txt3)
+
+
+############ format for concatination
+txt1 = "hello"
+txt2 = "world!"
+age = 18
+
+# txt3= "I'm navid, my age is {}"
+# txt3 = txt3.format(age)
+# print(txt3) # => I'm navid, my age is 18
+
+# txt4 = "I'm navid, my age is {} {} {}"
+# txt4 = txt4.format(age, txt1, txt2)
+# print(txt4) # => I'm navid, my age is 18 hello world!
+
+txt4 = "I'm navid, my age is {2} {1} {0}"
+txt4 = txt4.format(age, txt1, txt2)
+print(txt4) # => I'm navid, my age is world! hello 18
+
+
+############ using \ in string
+
+text = "hello world\n!" # new line
+text = "hello world\t!" # tab => hello world     !
+text = "\\n goes new line" # \n goes new line
+text = 'I\'m programmer' # I'm programmer
+print(text)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
