@@ -89,6 +89,78 @@ del a[0]
 a.clear() # => []
 # print(a)
 
+################################################ tuples => like list 
+
+my_list = ["red", 12 , 9.5]
+my_tupple = ("red", 12 , 9.5)
+# print(my_list[1])    # => 12
+# print(my_tupple[1])  # => 12
+
+#### when we have only one element in tuple, compiler  consider it as a str class
+tuple_str = ("hi")
+# print(type(tuple_str)) # => <class 'str'>
+tuple_num = (1)
+# print(type(tuple_str)) # => <class 'str'>
+# for converting it to tupple we need to add , in front of the only element
+tuple_str = ("hi",)
+# print(type(tuple_str)) # => <class tupple>
+
+# tupples are not changable, we can not add or remove, we can not change the elements
+
+# we can get some parts of tuppple 
+my_tupple = ("red", 12 , 9.5)
+# print(my_tupple[0:2])  # => ('red', 12)
+# if "red" in  my_tupple:
+    # print ("Yes");
+
+# changing tupple elements with list
+my_tupple = ("red", 12 , 9.5)
+my_tupple_to_list = list(my_tupple) # convert to list and make desired changes
+my_tupple_to_list[0] = "blue"
+my_tupple = tuple(my_tupple_to_list) # convert to tupple 
+# print(my_tupple) # => ('blue', 12, 9.5)
+
+# pack and unpake tupples => destructuring
+my_tupple = ("red", 12 , "blue") # => packing
+(item1, item2, item3) = my_tupple  # => destructuring (exact number in both side)
+# print(item1) "red"
+# print(item2)  "12"
+# print(item3)  "blue"
+(item1, item2, item3, *item4 ) = ("red", 12 , "blue", "hi", True , 56)
+# print(item1)
+# print(item2)
+# print(item3) 
+# print(item4)  # => ['hi', True, 56] list, iy's not tupple
+(item1, *item2, item3) = ("red", 12 , "blue", "hi", True , 56)
+# print(item1)  # "red"
+# print(item2)  # [12, 'blue', 'hi', True]
+# print(item3)  # True
+
+# tuple concatination
+my_tuple1 = ("red", 12 , "blue", 12, "red", 12)
+my_tuple2 = ("test",)
+my_tuple3 = my_tuple1 + my_tuple2;
+# print(my_tuple3) # ('red', 12, 'blue', 12, 'red', 12, 'test')
+
+# repetition
+tuple = ("test",)
+tuple1 = 3 * tuple;
+# print(tuple1) # ('test', 'test', 'test')
+
+
+my_tuple1 = ("red", 12 , "blue", 12, "red", 12)
+print(my_tuple1.count("red"))    # 2
+print(my_tuple1.count(12))  
+     # 3
+print(my_tuple1.index("blue"))   # 2
+print(my_tuple1.index("red"))    # 0
+print(my_tuple1.index(12))  
+     # 1
+print(my_tuple1.index(12,2))      # 3  find 12 after index 2
+print(my_tuple1.index(12,2,4))      # 3  find 12 after index 2 , before index 4
+
+
+
 #----------------------------------------------------------------------
 
 ############### comment 
@@ -346,7 +418,7 @@ age = 18
 
 txt4 = "I'm navid, my age is {2} {1} {0}"
 txt4 = txt4.format(age, txt1, txt2)
-print(txt4) # => I'm navid, my age is world! hello 18
+# print(txt4) # => I'm navid, my age is world! hello 18
 
 
 ############ using \ in string
@@ -355,7 +427,7 @@ text = "hello world\n!" # new line
 text = "hello world\t!" # tab => hello world     !
 text = "\\n goes new line" # \n goes new line
 text = 'I\'m programmer' # I'm programmer
-print(text)
+# print(text)
 
 
 
