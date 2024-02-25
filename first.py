@@ -931,10 +931,21 @@ class D(B,C):
 
 d= D()
 d.test() # from class D
-print(D.__mro__) # show parents  ==> (<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>)
-print(D.mro()) # show parents ==>  [<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>]
+# print(D.__mro__) # show parents  ==> (<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>)
+# print(D.mro()) # show parents ==>  [<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>]
 
 
+# ----------------------------------------------
+# env variable
+# pip install python-dotenv
+import os;
+from dotenv import load_dotenv, dotenv_values
 
+# load_dotenv()
+# print(os.getenv("MY_SECRET_KEY")) #12435465dxfbgd656
+# print(os.getenv("COMBINED")) # 127.0.0.1:9999
 
+config = dotenv_values(".env")
+print(config) #OrderedDict({'MY_SECRET_KEY': '12435465dxfbgd656', 'HOST': '127.0.0.1', 'PORT': '9999', 'COMBINED': '127.0.0.1:9999'})
+print(config["HOST"]) # 127.0.0.1
 
